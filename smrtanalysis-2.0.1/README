@@ -1,0 +1,14 @@
+Prerequisites:
+
+smrtanalysis 2.0.1
+cross_match 1.090518
+bedtools 2.17.0
+
+Usage:
+
+mkdir -p ${OUTPUT_DIR}/${SAMPLE}
+cd ${OUTPUT_DIR}/${SAMPLE}
+cp ${MAKEDIR}/HGAP_Assembly_Advanced.1.xml .
+. ${MAKEDIR}/config.sh
+find ${SEQUENCE_DIR}/${SAMPLE}/Analysis_Results -name "*.bax.h5" -exec readlink -f {} > input.fofn
+make -f ${MAKEDIR}/Makefile source all
