@@ -61,7 +61,7 @@ vectors.txt :
 %.fasta : %.masked.bas.h5
 	pls2fasta $^ $@ -noSplitSubreads
 
-%.masked.bax.h5 :
+%.masked.bas.h5 :
 	mv $*.bas.h5 $@
 
 clean :
