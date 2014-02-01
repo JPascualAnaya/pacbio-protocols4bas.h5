@@ -1,8 +1,8 @@
 FILES=$(shell cat input.fofn)
 FILENAMES=$(notdir $(FILES))
-SMRT_CELL_IDS=$(subst .bax.h5,,$(FILENAMES))
+SMRT_CELL_IDS=$(subst .bas.h5,,$(FILENAMES))
 FASTA_FILES=$(addsuffix .fasta,$(SMRT_CELL_IDS))
-MASKED_FILES=$(addsuffix .masked.bax.h5,$(SMRT_CELL_IDS))
+MASKED_FILES=$(addsuffix .masked.bas.h5,$(SMRT_CELL_IDS))
 UPDATED_REGIONS=$(addsuffix .regions.log,$(SMRT_CELL_IDS))
 
 all : $(UPDATED_REGIONS) quiver.fasta
@@ -24,7 +24,7 @@ input.masked.xml : input.masked.fofn
 	fofnToSmrtpipeInput.py $< > $@
 
 input.masked.fofn : $(UPDATED_REGIONS)
-	find ./ -name "*.bax.h5" -exec readlink -f {} \; > $@
+	find ./ -name "*.bas.h5" -exec readlink -f {} \; > $@
 
 %.regions.log : %.non_vector.bed
 	python $(MAKEDIR)/update_regions.py $* $< 2> $@
@@ -58,11 +58,11 @@ vectors.txt :
 %.read_lengths.tab : %.fasta
 	fastalength $^ | awk 'OFS="\t" { print $$2,$$1 }' | sort -k 1,1 > $@
 
-%.fasta : %.masked.bax.h5
+%.fasta : %.masked.bas.h5
 	pls2fasta $^ $@ -noSplitSubreads
 
 %.masked.bax.h5 :
-	mv $*.bax.h5 $@
+	mv $*.bas.h5 $@
 
 clean :
 	rm -f filtered_longreads.fasta index* metadata.rdf noop quiver.fasta toc.xml variants.*
