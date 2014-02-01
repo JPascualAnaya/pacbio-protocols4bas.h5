@@ -10,5 +10,5 @@ mkdir -p ${OUTPUT_DIR}/${SAMPLE}
 cd ${OUTPUT_DIR}/${SAMPLE}
 cp ${MAKEDIR}/HGAP_Assembly_Advanced.2.xml .
 . ${MAKEDIR}/config.sh
-find ${SEQUENCE_DIR}/${SAMPLE}/Analysis_Results -name "*.bax.h5" -exec readlink -f {} \; > input.fofn
+find ${SEQUENCE_DIR}/${SAMPLE}/Analysis_Results -name "*.bas.h5" -exec readlink -f {} \; > input.fofn
 make -f ${MAKEDIR}/Makefile source all
