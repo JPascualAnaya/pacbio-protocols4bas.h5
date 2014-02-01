@@ -40,7 +40,7 @@ def update_regions(filename_prefix, regions_filename):
 
     # Open each unique base file and search regions by hole number.
     for filename, regions_to_update in regions_by_file.iteritems():
-        sys.stderr.write("Found %i regions to update for %s.masked.bax.h5\n" % (len(regions_to_update), filename))
+        sys.stderr.write("Found %i regions to update for %s.masked.bas.h5\n" % (len(regions_to_update), filename))
 
         # Use the first and last hole number to reduce the search space of the
         # base file.
@@ -50,7 +50,7 @@ def update_regions(filename_prefix, regions_filename):
         # Open the base file in append mode to allow in-place updates to the
         # Regions dataset.
         total_bases_removed = 0
-        hdf5_filename = "%s.masked.bax.h5" % filename
+        hdf5_filename = "%s.masked.bas.h5" % filename
 
         if not os.path.exists(hdf5_filename):
             raise Exception("File '%s' doesn't exist." % hdf5_filename)
