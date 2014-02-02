@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. /home/champi/Documents/hagfish/pacbio/pacbio-protocols4bas.h5/smrtanalysis-2.0.1/etc/setup.sh
+. /home/champi/Software/smrtanalysis/install/smrtanalysis-2.0.1/etc/setup.sh
 
 # . /etc/profile.d/modules.sh
 # if test ! -z $MODULESHOME; then
