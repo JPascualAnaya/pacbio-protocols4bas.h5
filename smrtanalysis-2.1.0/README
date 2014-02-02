@@ -1,6 +1,6 @@
 Prerequisites:
 
-smrtanalysis 2.1.0
+smrtanalysis 2.1.0 # Actually using 2.1.1
 cross_match 1.090518
 bedtools 2.17.0
 
