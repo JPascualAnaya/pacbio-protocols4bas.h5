@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# . /home/champi/Software/smrtanalysis/current/etc/setup.sh
+. /home/champi/Software/smrtanalysis/current/etc/setup.sh
 
 # . /etc/profile.d/modules.sh
 # if test ! -z $MODULESHOME; then
