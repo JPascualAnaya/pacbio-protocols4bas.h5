@@ -1,7 +1,7 @@
 #!/bin/bash
 
 . /home/champi/Software/smrtanalysis/install/smrtanalysis-2.0.1/etc/setup.sh
-
+. /home/champi/Software/smrtanalysis/install/smrtanalysis-2.0.1/common/etc/setup.sh
 # . /etc/profile.d/modules.sh
 # if test ! -z $MODULESHOME; then
 #   module load modules modules-init modules-gs/prod modules-eichler/prod
