@@ -40,7 +40,7 @@ def update_regions(filename_prefix, regions_filename):
 
     # Open each unique base file and search regions by hole number.
     for filename, regions_to_update in regions_by_file.iteritems():
-        sys.stderr.write("Found %i regions to update for %s.masked.bas.h5\n" % (len(regions_to_update), filename))
+        sys.stderr.write("Found %i regions to update for %s_masked.bas.h5\n" % (len(regions_to_update), filename))
 
         # Use the first and last hole number to reduce the search space of the
         # base file.
