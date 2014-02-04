@@ -2,7 +2,7 @@ FILES=$(shell cat input.fofn)
 FILENAMES=$(notdir $(FILES))
 SMRT_CELL_IDS=$(subst .bas.h5,,$(FILENAMES))
 FASTA_FILES=$(addsuffix .fasta,$(SMRT_CELL_IDS))
-MASKED_FILES=$(addsuffix .masked.bas.h5,$(SMRT_CELL_IDS))
+MASKED_FILES=$(addsuffix _masked.bas.h5,$(SMRT_CELL_IDS))
 UPDATED_REGIONS=$(addsuffix .regions.log,$(SMRT_CELL_IDS))
 
 all : $(UPDATED_REGIONS) quiver.fasta
@@ -61,7 +61,7 @@ vectors.txt :
 %.fasta : %.masked.bas.h5
 	pls2fasta $^ $@ -noSplitSubreads
 
-%.masked.bas.h5 :
+%_masked.bas.h5 :
 	mv $*.bas.h5 $@
 
 clean :
