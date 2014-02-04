@@ -50,7 +50,7 @@ def update_regions(filename_prefix, regions_filename):
         # Open the base file in append mode to allow in-place updates to the
         # Regions dataset.
         total_bases_removed = 0
-        hdf5_filename = "%s.masked.bas.h5" % filename
+        hdf5_filename = "%s_masked.bas.h5" % filename
 
         if not os.path.exists(hdf5_filename):
             raise Exception("File '%s' doesn't exist." % hdf5_filename)
