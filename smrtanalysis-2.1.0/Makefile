@@ -58,7 +58,7 @@ vectors.txt :
 %.read_lengths.tab : %.fasta
 	fastalength $^ | awk 'OFS="\t" { print $$2,$$1 }' | sort -k 1,1 > $@
 
-%.fasta : %.masked.bas.h5
+%.fasta : %_masked.bas.h5
 	pls2fasta $^ $@ -noSplitSubreads
 
 %_masked.bas.h5 :
